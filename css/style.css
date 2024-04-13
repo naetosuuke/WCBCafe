@@ -96,10 +96,391 @@ img {
 }
 
 #home {
-    background-image: url(../images/main-bg.jpg);
-    height: 100vh;
+    background-image: url(../images/main-bg.jpg),linear-gradient(#c9ffbf, #ffafbd);
+    background-blend-mode: luminosity; /*背景画像と背景色を混ぜることができる*/
+    min-height: 100vh;
 }
 
 #home .page-title {
     text-transform: none;
+}
+
+/* NEWS
+-------------------------------------*/
+
+#news {
+    background-image: url(../images/news-bg.jpg);
+    height: 270px;
+    margin-bottom: 40px;
+}
+
+#news .page-title {
+    text-align: center;
+}
+
+/* FOOTER
+-------------------------------------*/
+
+footer {
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+
+.news-contents {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+/* ARTICLE */
+
+article {
+    width: 60%;
+    order: 2;
+}
+
+article img {
+    margin-bottom: 20px;
+}
+
+article p {
+    margin-bottom: 1rem;
+}
+
+.post-info {
+    position: relative;  /*相対配置*/
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-date {
+    background: #0bd;
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    position: absolute; /*絶対配置*/
+    top: 0;
+    padding-top: 10px;
+}
+
+.post-date span {
+    font-size: 1rem;
+    border-top: 1px rgba(255,255,255,.5) solid;
+    padding-top: 6px;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.post-title {
+    font-family: "Yu Mincho", "YuMincho", "selif";
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.post-title,
+.post-cat {
+    margin-left: 120px;
+}
+
+/* ASIDE */
+
+aside {
+    width: 22%;
+    order: 3;
+}
+
+aside p {
+    padding: 12px 10px;
+}
+
+.sub-menu {
+    margin-bottom: 60px;
+    list-style: none; /*リストのマーカーを消す*/
+}
+
+.sub-menu li {
+    border-bottom: 1px #ddd solid; /*下線*/
+}
+
+.sub-menu a {
+    display: block;
+    padding: 10px;
+    color: #432;
+}
+
+
+.sub-menu a:hover {
+    color: #0bd;
+}
+
+.sub-title {
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    font-weight: normal;
+}
+
+/* ad */
+.ad {
+    order: 1; /*要素の順番を変更*/
+}
+
+
+/* MENU
+-------------------------------------*/
+#menu {
+    background-image: url(../images/menu-bg.jpg);
+    min-height: 90vh;
+}
+
+.menu-content {
+    max-width: 560px;
+    margin-top: 10%;
+}
+
+.menu-content .page-title {
+    text-align: center;
+}
+
+.menu-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 0;
+}
+
+.grid {
+    display: grid; /* CSSグリッドの適用 */
+    gap: 26px; /* 要素間の間隔 */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* gridの配置 repeat 繰り返し auto-fit:画面に合わせて自動フィット, minmax:1frが240pxより小さくならない */
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+
+.big-box {
+/* 大きいサイズのグリッドアイテム*/
+/* grid-column, grid-row で始まり/終わりのラインを指定*/
+grid-column: 1 / 3;
+grid-row: 1 / 3;
+}
+
+.big-box img {
+    /* 他のimgと高さを合わせる */
+    height: 94%;
+    width: 100%;
+    /* 画像のアスペクト比を保ちつつ、指定したサイズに収める */
+    /* object-fit: 自動トリミング */
+    object-fit: cover; 
+}
+
+/* CCONTACT
+-------------------------------------*/
+#contact {
+    background-image: url(../images/contact-bg.jpg);
+    min-height: 100vh;
+}
+
+/* フォーム */
+form div {
+    margin-bottom: 14px;
+}
+label {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block; /* labelはデフォルトinlineなのでblockにかえる */
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    background:rgba(255,255,255,.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%; /* 親要素いっぱいに広げる */
+    max-width: 240px
+}
+textarea {
+    width: 100%; /* 親要素いっぱいに広げる */
+    max-width: 480px;
+    height: 6rem;
+}
+input[type=submit] {
+    border: none;
+    cursor: pointer; /* マウスカーソルをポインターに変更 */
+    line-height: 1; /* テキストの行の高さ */
+}
+
+/* LOCATION */
+#location {
+    padding: 4%, 0;
+}
+#location .wrapper {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.location-info {
+    width: 22%;
+}
+.location-info p {
+    padding: 12px  10px;
+}
+.location-map {
+    width: 74%;
+}
+
+/* SNS */
+#sns {
+    background: #FAF7F0;
+    padding: 4% 0;
+}
+#sns .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+#sns .sub-title {
+    margin-bottom: 30px;
+}
+.sns-box {
+    width: 30%;
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+}
+
+
+
+
+/* MEDIA QUERIES  --レスポンシブ対応 画面幅が600px以下の時にCSS上書
+-------------------------------------*/
+@media (max-width: 600px) {
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    /* HEADER */
+    .main-nav {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .main-nav li {
+        margin: 0 20px;
+    }
+
+    /* HOME */
+    .home-content {
+        margin-top: 20%;
+    }
+    
+    .page-header {
+        flex-direction: column; /*要素(ロゴとメニュー)縦並びに指定*/
+        align-items: center;
+    }
+
+    /* NEWS */
+    .news-contents {
+        flex-direction: column; /*要素(記事、サブバー、アド)縦並びに指定*/
+    }
+    article, aside {
+        width: 100%;
+    }
+
+    .post-info {
+        margin-bottom: 20px;
+    }
+    
+    #news .page-title {
+        margin-top: 30px;
+    }
+
+    aside {
+        margin-top: 60px;
+    }
+
+    .post-info {
+        margin-bottom: 30px;
+    }
+
+    .post-date {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+
+    .post-date span {
+        font-size: 0.875rem;
+        padding-top: 2px;
+    }
+
+    .post-title {
+        font-size: 1.375rem;
+    }
+
+    .post-cat {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+
+    .post-title, .post-cat {
+        margin-left: 8-px;
+    }
+
+    /* MENU */
+    .menu-content {
+        margin-top: 20%;
+    }
+
+    .big-box {
+        grid-column: auto; /*配置する要素　自動で設定*/
+        grid-row: auto;
+    }
+        
+    .big-box img {
+        height: auto; 
+    }
+    
+    /* CONTACT */
+    #contact .page-title{
+        margin-top: 40px;
+    }
+
+    /* FORM */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
+    }
+
+    /* 店舗情報, MAP / SNS */
+    #location .wrapper,
+    #sns .wrapper {
+        flex-direction: column;
+    }
+    .location-info,
+    .location-map,
+    .sns-box {
+        width: 100%;
+    }
+    .sns-box {
+        margin-bottom: 30px;
+    }
+    
 }
